@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+  body{
+    text-align: center;}
+  .hidden{
+    display:none;
+
+  }
+  </style>
+  <script>
+    function fetch(){
+      console.log("hi")
+      // fetch('http://localhost:8080/fetchData')
+      // .then(res => console.log("res"))
+      // .then(res => console.log("respone",res))
+    }
+      function fetching(){
+      document.getElementById("getting").className="";
+      }
+  </script>
+</head>
+<body> 
+  <form action="/fetchData" method="GET">
+    <button onclick="fetch()">My Fetch Button</button>
+  </form>
+  <h1>SIGN IN</h1>
+  <form action="/check" method="POST">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" >
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Log In</button>
+</form>
+
+<form action="/sign_up" method="GET">
+    <div class="form-group">
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+    </div>
+</form>
+</form>
+<form action="/chng" method="GET">
+    <div class="form-group">
+    <button type="submit" class="btn btn-primary">change password</button>
+    </div>
+</form>
+
+<h1>Fetching data</h1>
+<form action="/fetch" method="POST">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Enter Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="enteremail">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+  <button type="submit" class="btn btn-primary" >Data fetch</button>
+  </div>
+  
+</form>
+<button type="submit" class="btn btn-primary"  onclick=fetching()>Data f</button>
+<div class="hidden" id="getting">
+    
+    <table class="table table-hover table-dark">
+        <thead>
+          <tr>
+              <th scope="col">#</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>{{x}}</td>
+            <td>{{y}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+
+</body>
+</html>
